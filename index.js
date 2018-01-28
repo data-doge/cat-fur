@@ -19,6 +19,8 @@ const drawCurve = ({ x0, y0, length, theta, amp, thetaOffset, cy }) => {
     x0 - dx, y1 - cy,
     x0, y1
   )
+  ctx.strokeStyle = '#FFABBE'
+  ctx.lineWidth = 3
   ctx.stroke()
 }
 
@@ -31,11 +33,11 @@ const draw = () => {
   clear()
   theta = theta + 0.01
 
-  range(-100, 400, 100).forEach(i => {
-    range(0, 410, 10).forEach(j => {
+  range(-100, 400, 100).forEach(y => {
+    range(0, 410, 10).forEach(x => {
       drawCurve({
-        x0: j,
-        y0: i,
+        x0: x,
+        y0: y,
         length: 100,
         theta,
         thetaOffset: 0,
