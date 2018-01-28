@@ -9,8 +9,9 @@ const ctx = canvas.getContext('2d')
 const canvasWidth = 400
 const canvasHeight = 400
 
-const drawCurve = ({ x0, y0, length, theta, amp, thetaOffset, cy }) => {
+const drawCurve = ({ x0, y0, length, theta, amp, thetaOffset }) => {
   let dx = amp * sin(theta * 2 * PI + thetaOffset)
+  let cy = 50 + 20 * sin(theta * 0.1 * 2 * PI + PI) // 30 to 70
   let y1 = y0 + length
   ctx.beginPath()
   ctx.moveTo(x0, y0)
@@ -29,11 +30,12 @@ const clear = () => {
 }
 
 let theta = 0
+
 const draw = () => {
   clear()
   theta = theta + 0.01
 
-  range(-100, 400, 100).forEach(y => {
+  range(-100, 500, 100).forEach(y => {
     range(0, 410, 10).forEach(x => {
       drawCurve({
         x0: x,
@@ -41,8 +43,7 @@ const draw = () => {
         length: 100,
         theta,
         thetaOffset: 0,
-        amp: 50,
-        cy: 20
+        amp: 50
       })
     })
   })
