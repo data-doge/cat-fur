@@ -1,0 +1,22 @@
+html, body {
+  position: relative;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #B1D4F7;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#floor {
+  border: 5px solid #FFABBE;
+}
