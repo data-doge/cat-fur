@@ -1,5 +1,6 @@
 const $ = require('jquery')
 const raf = require('raf')
+const range = require('lodash.range')
 const { sin, PI } = Math
 
 const canvas = $('#floor')[0]
@@ -29,7 +30,20 @@ let theta = 0
 const draw = () => {
   clear()
   theta = theta + 0.01
-  drawCurve({ x0: 50, y0: 50, length: 200, theta, amp: 50, thetaOffset: 0, cy: 50 })
+
+  range(-100, 400, 100).forEach(i => {
+    range(0, 410, 10).forEach(j => {
+      drawCurve({
+        x0: j,
+        y0: i,
+        length: 100,
+        theta,
+        thetaOffset: 0,
+        amp: 50,
+        cy: 20
+      })
+    })
+  })
   raf(draw)
 }
 
