@@ -4,11 +4,21 @@
     <meta charset="utf-8" />
     <title>cat-fur</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
     <link href="index.css" rel="stylesheet" />
   </head>
   <body>
-    <div id='container'>
-      <canvas id='floor' width="400" height="400"></canvas>
+    <div class='container'>
+      <div id='canvas-container'>
+        <div class='container' id='label-container'>
+          <div id='label'>
+            quit<br />
+            your<br />
+            job
+          </div>
+        </div>
+        <canvas id='floor' width="400" height="400"></canvas>
+      </div>
     </div>
     <script src="bundle.js"></script>
   </body>
