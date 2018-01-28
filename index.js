@@ -51,6 +51,9 @@ const draw = () => {
       })
     })
   })
+  $('#label').css({
+    top: 5 * sin(4 * PI * theta)
+  })
   raf(draw)
 }
 
